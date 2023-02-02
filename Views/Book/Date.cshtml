@@ -1,0 +1,35 @@
+﻿
+@using (Html.BeginForm("Index", "Book", FormMethod.Post))
+{
+    <div>
+    <div id="date-picker-fromDate" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+        <label for="example">From Date</label>
+        <input placeholder="Select date" type="text" id="example" class="form-control">        
+        <i class="fas fa-calendar input-prefix"></i>
+    </div>
+
+    <div id="date-picker-toDate" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+        <label for="example">To Date</label>
+        <input placeholder="Select date" type="text" id="example" class="form-control">
+        
+        <i class="fas fa-calendar input-prefix"></i>
+    </div>
+    <br/>
+    <div id="NoDays">
+        <label for="example">Enter No.of Days</label>
+        <input placeholder="Enter Days" type="text" id="days" class="form-control">
+        
+        
+    </div>
+
+    <input type="submit" id="book" value="Book">
+    </div>
+}    
+
+
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+            inline: true
+     });
+</script>
+

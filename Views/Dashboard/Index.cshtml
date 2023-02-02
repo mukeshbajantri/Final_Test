@@ -1,0 +1,132 @@
+﻿@model IEnumerable<CarRentals.Models.CarDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="bg_image">
+    <style>
+        .bg_image{
+            background-image:url('https://c4.wallpaperflare.com/wallpaper/66/25/239/machine-grey-background-volvo-wallpaper-preview.jpg');
+            height:800px;
+            width:1300px;
+            background-size:cover;
+        }
+    </style>
+
+
+<h1>Car Rental Application </h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+@{
+    if((bool)TempData["Login"] != null && (bool)TempData["Login"] == false)
+    {
+    <div class="row d-flex flex-row" id="credential">
+    <div class="col-sm-6 p-2">
+    <label>New user register here</label>    
+    &emsp; <button class="btn btn-primary" style="background-color:white;border:1px solid black"> @Html.ActionLink("Register","Index","Users",new{str="register"})</button>
+    </div>
+    <div class="col-sm-6 p-2">
+    <label>Already an user login here</label>
+    &emsp; <button class="btn btn-primary" style="background-color:white;border:1px solid black"> @Html.ActionLink("LogIn","Index","Users",new{str="login"})</button>
+    </div>
+        </div>
+    }
+    else
+    {
+     <div class="row d-flex flex-row" id="logout">
+        <div class="col-sm-6 p-2">
+        <label></label>    
+        &emsp; <button class="btn btn-primary" style="background-color:white;border:1px solid black"> @Html.ActionLink("LogOut","LogOut","Dashboard",new{})</button>
+        </div>
+
+       @if(TempData["Admin"]!=null && (bool)TempData["Admin"] == true)
+       {
+        <div class="col-sm-6 p-2">
+            <label></label>    
+            &emsp; <button class="btn btn-primary" style="background-color:white;border:1px solid black"> @Html.ActionLink("Admin Actions","Index","Admin",new{})</button>
+        </div>
+       }
+        
+     </div>
+    }
+}
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kilometers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kilometers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+                @{
+                    
+                    if(TempData["Login"]!=null && (bool)TempData["Login"] == true)
+                    {
+                      <td>
+                        @Html.ActionLink("Book", "BookingCar","Dashboard", new {  CarId=item.CarId  })                
+                      </td>
+                    }
+                }            
+        </tr>
+}
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    
+</script>
+</div>
+
