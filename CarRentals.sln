@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentals", "CarRentals.csproj", "{BF6CB3CE-28AD-41C1-8896-8F9D70367711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRental_UI", "..\CarRental_UI\CarRental_UI.csproj", "{AFCA1A78-0DDD-436B-8EBC-9296B86A1CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF6CB3CE-28AD-41C1-8896-8F9D70367711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6CB3CE-28AD-41C1-8896-8F9D70367711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6CB3CE-28AD-41C1-8896-8F9D70367711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6CB3CE-28AD-41C1-8896-8F9D70367711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCA1A78-0DDD-436B-8EBC-9296B86A1CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCA1A78-0DDD-436B-8EBC-9296B86A1CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCA1A78-0DDD-436B-8EBC-9296B86A1CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCA1A78-0DDD-436B-8EBC-9296B86A1CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62583A40-2BEA-444E-99FD-221079AE9B2D}
+	EndGlobalSection
+EndGlobal
