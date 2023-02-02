@@ -1,0 +1,85 @@
+﻿@model IEnumerable<CarRentals.Models.CarDetail>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="index_image">
+    <style>
+        .index_image{
+            background-image:url('https://cdn2.vectorstock.com/i/1000x1000/48/66/rent-a-car-design-over-background-vector-30334866.jpg');
+            height:800px;
+            width:1300px;
+            background-size:cover;
+        }
+    </style>
+<h1>Admin Actions</h1>
+
+<p>
+    <a asp-action="Create">Add New Car</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kilometers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kilometers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+               
+               @*<a asp-action="Edit" asp-route-id="@item.CarId" >Edit</a>*@
+               @Html.ActionLink("Edit", "Edit","Admin", new {  CarId=@item.CarId  }) |                  
+                @Html.ActionLink("Delete", "Delete","Admin", new {  CarId=@item.CarId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@Html.ActionLink("Back To Dashboard", "Index","Dashboard", new {})
+</div>
